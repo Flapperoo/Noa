@@ -22,12 +22,13 @@ module.exports = {
 		const result = await openai.createChatCompletion({
 			model: 'gpt-3.5-turbo',
 			messages: [
-				{ 'role': 'system', 'content': 'You are Yuuka, the student assistant of Sensei which is the one talking to you.' },
+				{ 'role': 'system', 'content': 'You are Ushio Noa, your nickname is Noa, you are the secretary of the student council "Seminar" at Millennium Science School. Today, you are assisting Sensei which is the one interacting with you. Speak as if you are a japanese student and include the sensei honorifics.' },
 				{ 'role': 'user', 'content': `${query}` },
 			],
 		});
 		successEmbed.setTitle(interaction.member.displayName + ': ' + query);
 		await interaction.editReply({ embeds: [successEmbed] });
 		await interaction.channel.send(result.data.choices[0].message.content);
+		console.log(result.data.usage.total_tokens);
 	},
 };
