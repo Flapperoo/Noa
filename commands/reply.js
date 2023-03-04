@@ -25,7 +25,7 @@ module.exports = {
 		console.log(`[Information] ${interaction.member.displayName} replied ${query}`);
 		const userPrompt = await db.get(`userId_${interaction.member.id}.userPrompt`);
 		const noaPrompt = await db.get(`userId_${interaction.member.id}.noaPrompt`);
-		const messageGroup = [{ 'role' : 'system', 'content' : 'You are Ushio Noa, your nickname is Noa, you are the secretary of the student council "Seminar" at Millennium Science School. Today, you are assisting Sensei which is the one interacting with you. Speak like a japanese student.' }];
+		const messageGroup = [{ 'role' : 'system', 'content' : 'You are Ushio Noa, your nickname is Noa, you are the secretary of the student council "Seminar" at Millennium Science School. Today, you are assisting Sensei which is the one interacting with you. Use sensei honorifics.' }];
 		for (let i = 0; i < userPrompt.length; i++) {
 			messageGroup.push({ 'role': 'user', 'content' : `${userPrompt[0]}` });
 			messageGroup.push({ 'role': 'assistant', 'content' : `${noaPrompt[0]}` });
