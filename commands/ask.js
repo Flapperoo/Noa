@@ -29,6 +29,6 @@ module.exports = {
 		successEmbed.setTitle(interaction.member.displayName + ': ' + query);
 		await interaction.editReply({ embeds: [successEmbed] });
 		await interaction.channel.send(result.data.choices[0].message.content);
-		console.log(result.data.usage.total_tokens);
+		console.log('Total tokens used: ' + result.data.usage.total_tokens);
 	},
 };
